@@ -7,6 +7,7 @@ package template
 import (
 	"bytes"
 	"errors"
+	"fmt"
 	"html/template"
 	"path"
 	"plugin"
@@ -139,6 +140,9 @@ func Get(theme string) Template {
 // Default get the default template with the theme name set with the global config.
 // If the name is not found, it panics.
 func Default() Template {
+	fmt.Println(templateMap)
+	fmt.Println(c.GetTheme())
+
 	if temp, ok := templateMap[c.GetTheme()]; ok {
 		return temp
 	}

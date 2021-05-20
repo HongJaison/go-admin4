@@ -6,7 +6,7 @@ import (
 	"os/signal"
 
 	_ "github.com/HongJaison/go-admin4/adapter/beego"
-	_ "github.com/HongJaison/go-admin4/modules/db/drivers/mysql"
+	_ "github.com/HongJaison/go-admin4/modules/db/drivers/mssql"
 
 	"github.com/HongJaison/go-admin4/engine"
 	"github.com/HongJaison/go-admin4/examples/datamodel"
@@ -28,10 +28,10 @@ func main() {
 		Env: config.EnvLocal,
 		Databases: config.DatabaseList{
 			"default": {
-				// Host: "172.16.74.222",
-				// Name: "Ninja",
-				Host:       "127.0.0.1",
-				Name:       "Casino",
+				Host: "172.16.74.222",
+				Name: "Ninja",
+				// Host:       "127.0.0.1",
+				// Name:       "Casino",
 				Port:       "1433",
 				User:       "sa",
 				Pwd:        "Akduifwkro1988",
